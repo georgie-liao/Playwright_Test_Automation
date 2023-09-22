@@ -1,22 +1,27 @@
 const { LoginPage } = require('./LoginPage');
+const { SignInPage } = require('./SignInPage');
 const { DashboardPage } = require('./DashboardPage');
 const { OrdersHistoryPage } = require('./OrdersHistoryPage');
 const { OrdersReviewPage } = require('./OrdersReviewPage');
 const { CartPage } = require('./CartPage');
+
 class POManager {
     constructor(page) {
         this.page = page;
         this.loginPage = new LoginPage(this.page);
+        this.signInPage = new SignInPage(this.page);
         this.dashboardPage = new DashboardPage(this.page);
         this.ordersHistoryPage = new OrdersHistoryPage(this.page);
         this.ordersReviewPage = new OrdersReviewPage(this.page);
         this.cartPage = new CartPage(this.page);
-
-
     }
 
     getLoginPage() {
         return this.loginPage;
+    }
+
+    getSignInPage() {
+        return this.signInPage;
     }
 
     getCartPage() {
