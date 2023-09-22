@@ -23,5 +23,5 @@ Before(async function () {
   });
 
   After(function () {
-    console.log('I am the last test')
+    console.log('I am the last test');
   });
